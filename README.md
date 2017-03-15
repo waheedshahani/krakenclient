@@ -13,3 +13,4 @@ Note: This is tested for XBTEUR currency pair. change XXBTZEUR to your prefferre
 
 
 If you have more time, write better version of it and share with me waheed.shahani@gmail.com
+If this was useful for you how about sending decimals of bitcoin to 3ELNKFu3ShFcr9eEbj4gftgPoPyCmVYvqr
