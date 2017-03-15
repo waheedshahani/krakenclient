@@ -2,6 +2,7 @@ import krakenex
 import time
 from datetime import datetime
 k=krakenex.API()
+#change the path to your krakenkey file. 
 k.load_key('/home/ubuntu/kraken/krakenkey.key')
 pripub={'Time':'pub','Assets':'pub','AssetPairs':'pub','Ticker':'pub','OHLC':'pub','Depth':'pub','Trades':'pub','Spread':'pub','Balance':'pri','TradeBalance':'pri','OpenOrders':'pri','ClosedOrders':'pri','QueryOrders':'pri','TradesHistory':'pri','QueryTrades':'pri','OpenPositions':'pri','Ledgers':'pri','QueryLedgers':'pri','TradeVolume':'pri','AddOrder':'pri','CancelOrder':'pri',}
 def callFunction(funName):
