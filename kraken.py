@@ -132,30 +132,25 @@ def trade(tradetype,leverage,coins):
         except Exception as e:
                 print "Error:" + str(e)
 
+
+def taskHandler(task):
+        return {
+                't' : getTicketInformation('XXBTZEUR','y'),
+                'b' : trade('buy','0','0'),
+                'bl': trade('buy','5','0'),
+                's' : trade('sell','0','0'),
+                'sl': trade('sell','5','0'),
+                'oo': getOpenOrders(),
+                'op': getOpenPositions(),
+                'c' : cancelOpenOrder(),
+                'bal': getAccountBalance(),
+                'q': exit()
+        }[task]
+
 while (1==1):
         task=str(raw_input('b=buy,s=sell,bl=buy lev, sl=sell lev, oo=open orders, op=open positions,c=cancel,bal=balance ')).lower()
 #Input:xy1234.000
 #x=b or s. b for buy. s for sell
 #y=l or m. L for limit , m for market
-
-        if task == 't':
-                getTicketInformation('XXBTZEUR','y')
-
-        if task=='b':
-                trade('buy','0','0')
-        if task=='bl':
-                trade('buy','5','0')
-        if task=='s':
-                trade('sell','0','0')
-        if task=='sl':
-                trade('sell','5','0')
-        if task=='oo': #query open orders
-                getOpenOrders()
-        if task=='op': #query open positions
-                getOpenPositions()
-        if task=='c': #to cancel open orders
-                cancelOpenOrder()
-        if task=='bal': #get asset info
-                getAccountBalance()
-        if task=='q':
-                exit()
+       
+        taskHandler(task)
